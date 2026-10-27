@@ -1,0 +1,26 @@
+.title {
+    text-align: center;
+}
+
+.board{
+    border: 2px solid burlywood;
+    height: 60vh;
+    width: 60vh;
+    display: grid;
+}
+
+.footer {
+    margin-top: 1rem;
+}
+
+.new-game {
+    cursor: pointer;
+    border: 1px solid black;
+    width: 300px;
+}
+
+.square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

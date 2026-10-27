@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>textUtilsbyAbdullah</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  
+  <body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-gray-900 text-white p-4">
+      <div class="container mx-auto flex justify-between items-center">
+        <a class="text-xl font-bold" href="/">textUtilsbyAbdullah</a>
+    </nav>
+
+    <!-- About Me -->
+    <div class="container mx-auto mt-10 p-6 bg-gray-100 rounded-lg shadow-md text-center">
+      <h1 class="text-2xl font-bold">About Me</h1>
+      <p class="mt-4 text-gray-700">Hi, I'm Abdullah Raashid, a passionate developer interested in Web Development, AI, and Machine Learning. 
+        This is a prototype website for Django. Connect with me:</p>
+      <div class="mt-4 flex justify-center space-x-4">
+        <a class="text-blue-600 hover:underline" href="https://github.com/Abdullah-Raashid/" target="_blank">GitHub</a>
+        <a class="text-blue-600 hover:underline" href="https://www.linkedin.com/in/abdullah-raashid/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+
+    <div
+      id="toast-success"
+      class="fixed top-4 right-4 flex items-center max-w-xs p-4 text-green-800 bg-green-100 border border-green-300 rounded-lg shadow-md transition-opacity duration-500 opacity-100"
+      role="alert"
+    >
+  <div class="mr-3">
+    <svg
+      class="w-6 h-6 text-green-600"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M5 13l4 4L19 7"
+      />
+    </svg>
+  </div>
+
+  <!-- Notification-->
+  <div class="text-sm font-medium">
+    <strong>Success!</strong> Your text has been analyzed!
+  </div>
+    <button
+      type="button"
+      class="ml-auto text-green-700 hover:text-green-900 focus:outline-none"
+      onclick="document.getElementById('toast-success').remove();"
+      aria-label="Close"
+    >
+      &times;
+    </button>
+  </div>
+
+  <script>
+    // Auto-hide toast after 5 seconds
+    setTimeout(() => {
+      const toast = document.getElementById("toast-success");
+      if (toast) {
+        toast.style.opacity = "0";
+        setTimeout(() => toast.remove(), 500);
+      }
+    }, 5000);
+  </script>
+
+
+    <div class="container mx-auto mt-5 p-6 bg-white shadow-lg rounded-lg">
+      <h1 class="text-2xl font-bold mb-4">Your analyzed text - {{purpose}}</h1>
+      <pre class="bg-gray-200 p-4 rounded-lg">{{analyzed_text}}</pre>
+    </div>
+  </body>
+</html>

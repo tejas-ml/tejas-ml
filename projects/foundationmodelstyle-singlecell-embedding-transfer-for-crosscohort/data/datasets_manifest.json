@@ -1,0 +1,51 @@
+{
+  "primary": "dataset.csv",
+  "topic_hint": "Foundation-Model-Style Single-Cell Embedding Transfer for Cross-Cohort Cell-Type Annotation Human Cell Atlas (HCA) + Mouse Cell Atlas + Synthetic Batch-Shifted Data",
+  "n_datasets": 4,
+  "datasets": [
+    {
+      "name": "cohort_A_primary",
+      "path": "cohort_A_primary.csv",
+      "n_samples": 900,
+      "n_features": 24,
+      "n_classes": 3,
+      "description": "cohort_A_primary: n=900, d=24, C=3, sep=1.6, flip=0.02, shift=0.0, noise=1.0, missing=0.0",
+      "abs_path": "/mnt/c/Users/tejas/OneDrive/Desktop/loop-eng/output/cycle_004/data/cohort_A_primary.csv"
+    },
+    {
+      "name": "cohort_B_domain_shift",
+      "path": "cohort_B_domain_shift.csv",
+      "n_samples": 700,
+      "n_features": 24,
+      "n_classes": 3,
+      "description": "cohort_B_domain_shift: n=700, d=24, C=3, sep=1.1, flip=0.05, shift=0.55, noise=1.15, missing=0.0",
+      "abs_path": "/mnt/c/Users/tejas/OneDrive/Desktop/loop-eng/output/cycle_004/data/cohort_B_domain_shift.csv"
+    },
+    {
+      "name": "cohort_C_noise_stress",
+      "path": "cohort_C_noise_stress.csv",
+      "n_samples": 650,
+      "n_features": 24,
+      "n_classes": 3,
+      "description": "cohort_C_noise_stress: n=650, d=24, C=3, sep=0.9, flip=0.08, shift=-0.25, noise=1.4, missing=0.04",
+      "abs_path": "/mnt/c/Users/tejas/OneDrive/Desktop/loop-eng/output/cycle_004/data/cohort_C_noise_stress.csv"
+    },
+    {
+      "name": "cohort_D_openml_real",
+      "path": "cohort_D_openml_real.csv",
+      "n_samples": 700,
+      "n_features": 8,
+      "n_classes": 2,
+      "description": "OpenML real table 'diabetes' as cohort cohort_D_openml_real",
+      "abs_path": "/mnt/c/Users/tejas/OneDrive/Desktop/loop-eng/output/cycle_004/data/cohort_D_openml_real.csv"
+    }
+  ],
+  "shared_n_features": 24,
+  "n_classes": 3,
+  "design": {
+    "cohort_A_primary": "High-signal primary cohort",
+    "cohort_B_domain_shift": "Domain-shifted cohort (mean shift + mild imbalance)",
+    "cohort_C_noise_stress": "Noise/missingness stress-test cohort",
+    "cohort_D_openml_real": "Optional real OpenML table when available"
+  }
+}

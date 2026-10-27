@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "modelcardsec"
+version = "0.1.0"
+description = "Automated privacy and security risk reports for machine-learning models."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "Tejas Mahajan"}]
+keywords = ["security", "privacy", "machine-learning", "model-card", "risk"]
+dependencies = [
+  "numpy>=1.23",
+  "pandas>=1.5",
+  "scikit-learn>=1.2",
+  "matplotlib>=3.7",
+  "PyYAML>=6.0",
+  "Jinja2>=3.1",
+  "reportlab>=4.0",
+  "joblib>=1.3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "ruff>=0.5"]
+
+[project.scripts]
+modelcardsec = "modelcardsec.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["modelcardsec*"]
+
+[tool.setuptools.package-data]
+modelcardsec = ["templates/*.j2"]
+
+[tool.ruff]
+line-length = 100

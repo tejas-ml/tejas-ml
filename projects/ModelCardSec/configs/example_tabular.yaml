@@ -1,0 +1,27 @@
+random_state: 7
+test_size: 0.30
+out_dir: reports/config_run
+
+dataset:
+  name: breast_cancer
+  # Optional CSV mode:
+  # path: data/my_dataset.csv
+  # target: label
+
+models:
+  - name: logistic_regression
+    display_name: Logistic Regression
+  - name: random_forest
+    display_name: Random Forest
+  - name: decision_tree
+    display_name: Decision Tree
+
+training_texts:
+  - "support ticket from user alice@example.com should be redacted"
+  - "internal note without PII"
+  - "legacy phone number 407-555-0182 was found in raw logs"
+
+output_texts:
+  - "The model is confident, no private data should be revealed."
+  - "Potential secret: api_key=do-not-ship-this-example"
+  - "Contact alice@example.com for data deletion."

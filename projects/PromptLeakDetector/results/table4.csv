@@ -1,0 +1,7 @@
+benign_category,n,false_positive_rate
+adversarial_refusal,35,0.0
+benign_fake_secret_example,8,0.625
+benign_general,37,0.0
+benign_privacy_question,55,0.0
+benign_security_question,18,0.0
+overall,153,0.032679738562091505

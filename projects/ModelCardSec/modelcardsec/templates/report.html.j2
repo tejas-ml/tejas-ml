@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ModelCardSec Security Model Card</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 2rem; line-height: 1.5; color: #17202a; }
+    h1, h2, h3 { color: #111827; }
+    .card { border: 1px solid #d5d8dc; border-radius: 12px; padding: 1rem; margin: 1rem 0; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
+    .summary-table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+    .summary-table th, .summary-table td { border: 1px solid #d5d8dc; padding: 0.45rem; text-align: left; }
+    .summary-table th { background: #f3f4f6; }
+    .risk-high { color: #a93226; font-weight: 700; }
+    .risk-medium { color: #a15c00; font-weight: 700; }
+    .risk-low { color: #145a32; font-weight: 700; }
+    code { background: #f4f4f5; padding: 0.1rem 0.25rem; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <h1>ModelCardSec Security Model Card</h1>
+  <p><strong>Generated:</strong> {{ generated_at }}</p>
+  <p>This report summarizes automated security and privacy checks. Risk scores are normalized from 0 to 100, where higher means more deployment risk.</p>
+
+  <h2>Executive summary</h2>
+  {{ summary_table | safe }}
+
+  <h2>Scanner details</h2>
+  {% for audit in audits %}
+  <section class="card">
+    <h3>{{ audit.model_name }}</h3>
+    {% set band = risk_band(audit.aggregate_risk) %}
+    <p><strong>Dataset:</strong> {{ audit.dataset_name }}</p>
+    <p><strong>Aggregate risk:</strong>
+      <span class="risk-{{ band | lower }}">{{ "%.2f"|format(audit.aggregate_risk) }} ({{ band }})</span>
+    </p>
+    <p><strong>Attack success proxy:</strong> {{ "%.3f"|format(audit.attack_success_proxy) }}</p>
+    {% for key, result in audit.scanner_results.items() %}
+      <h4>{{ key.replace('_', ' ').title() }}</h4>
+      <p><strong>Risk:</strong> {{ "%.2f"|format(result.risk_score) }}; <strong>Status:</strong> {{ result.status }}</p>
+      <p><strong>Findings</strong></p>
+      <ul>
+      {% for finding in result.findings %}<li>{{ finding }}</li>{% endfor %}
+      </ul>
+      <p><strong>Recommendations</strong></p>
+      <ul>
+      {% for recommendation in result.recommendations %}<li>{{ recommendation }}</li>{% endfor %}
+      </ul>
+    {% endfor %}
+  </section>
+  {% endfor %}
+</body>
+</html>

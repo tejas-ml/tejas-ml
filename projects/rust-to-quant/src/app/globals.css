@@ -1,0 +1,283 @@
+@import "tailwindcss";
+
+:root {
+  /* Off-white light mode — easy on the eyes */
+  --background: #f7f5f0;
+  --background-elevated: #fffcf7;
+  --background-muted: #efece4;
+  --foreground: #2c2a26;
+  --foreground-muted: #6b6560;
+  --border: #e0dbd0;
+  --border-strong: #c9c2b4;
+  --accent: #c45c26;
+  --accent-hover: #a84d1f;
+  --accent-soft: #f5e6dc;
+  --success: #3d7a5a;
+  --success-soft: #e4f0e9;
+  --error: #b5453a;
+  --error-soft: #f8e8e6;
+  --info: #3a6b8a;
+  --info-soft: #e4eef4;
+  --code-bg: #f0ebe3;
+  --editor-bg: #faf8f4;
+  --sidebar: #f3f0e9;
+  --nav: rgba(247, 245, 240, 0.92);
+  --shadow: 0 1px 3px rgba(44, 42, 38, 0.06), 0 4px 16px rgba(44, 42, 38, 0.04);
+  --shadow-lg: 0 8px 32px rgba(44, 42, 38, 0.08);
+  --rust: #c45c26;
+  --ring: rgba(196, 92, 38, 0.35);
+}
+
+.dark {
+  /* Soft dark mode — not pure black, easy on eyes */
+  --background: #1a1916;
+  --background-elevated: #22211d;
+  --background-muted: #2a2824;
+  --foreground: #e8e4db;
+  --foreground-muted: #9a948a;
+  --border: #3a3732;
+  --border-strong: #4a463f;
+  --accent: #e07a3d;
+  --accent-hover: #f08a4d;
+  --accent-soft: #3a2a20;
+  --success: #6bb38a;
+  --success-soft: #1e2e26;
+  --error: #e07068;
+  --error-soft: #3a2422;
+  --info: #6ba3c4;
+  --info-soft: #1e2a32;
+  --code-bg: #252320;
+  --editor-bg: #1e1d1a;
+  --sidebar: #1e1d1a;
+  --nav: rgba(26, 25, 22, 0.92);
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 4px 16px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.35);
+  --rust: #e07a3d;
+  --ring: rgba(224, 122, 61, 0.4);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-background-elevated: var(--background-elevated);
+  --color-background-muted: var(--background-muted);
+  --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-soft: var(--accent-soft);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-error: var(--error);
+  --color-error-soft: var(--error-soft);
+  --color-info: var(--info);
+  --color-info-soft: var(--info-soft);
+  --color-code-bg: var(--code-bg);
+  --color-editor-bg: var(--editor-bg);
+  --color-sidebar: var(--sidebar);
+  --color-rust: var(--rust);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--foreground);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--foreground-muted);
+}
+
+/* Prose for lesson content */
+.prose-lesson h2 {
+  font-size: 1.5rem;
+  font-weight: 650;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--foreground);
+  letter-spacing: -0.02em;
+}
+.prose-lesson h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--foreground);
+}
+.prose-lesson p {
+  margin-bottom: 1rem;
+  color: var(--foreground);
+}
+.prose-lesson ul,
+.prose-lesson ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+.prose-lesson li {
+  margin-bottom: 0.4rem;
+}
+.prose-lesson ul {
+  list-style-type: disc;
+}
+.prose-lesson ol {
+  list-style-type: decimal;
+}
+.prose-lesson code:not(pre code) {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 0.875em;
+  background: var(--code-bg);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  color: var(--rust);
+}
+.prose-lesson pre {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem 1.15rem;
+  overflow-x: auto;
+  margin-bottom: 1.25rem;
+  font-size: 0.875rem;
+  line-height: 1.55;
+}
+.prose-lesson pre code {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  color: var(--foreground);
+}
+
+/* Code + expected-output boxes in lessons */
+.prose-lesson .lesson-code {
+  margin-bottom: 0.35rem;
+}
+.prose-lesson .lesson-code + .lesson-output {
+  margin-top: -0.15rem;
+}
+.prose-lesson .lesson-code-label {
+  font-size: 0.65rem;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--foreground-muted);
+  margin-bottom: 0.35rem;
+  padding-left: 0.15rem;
+}
+.prose-lesson .lesson-code pre {
+  margin-bottom: 0.85rem;
+}
+.prose-lesson .lesson-output {
+  margin: 0 0 1.35rem 0;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--success);
+  border-radius: 10px;
+  background: var(--success-soft);
+  overflow: hidden;
+}
+.prose-lesson .lesson-output-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--success);
+  padding: 0.45rem 0.9rem 0.2rem;
+}
+.prose-lesson .lesson-output-pre {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  padding: 0.35rem 0.95rem 0.85rem;
+  color: var(--foreground);
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+.prose-lesson .lesson-output-pre code {
+  color: var(--foreground);
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.prose-lesson blockquote {
+  border-left: 3px solid var(--accent);
+  padding: 0.5rem 1rem;
+  margin: 1.25rem 0;
+  background: var(--accent-soft);
+  border-radius: 0 8px 8px 0;
+  color: var(--foreground-muted);
+}
+.prose-lesson strong {
+  font-weight: 600;
+  color: var(--foreground);
+}
+.prose-lesson a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.prose-lesson a:hover {
+  color: var(--accent-hover);
+}
+
+/* Monaco editor overrides */
+.monaco-editor,
+.monaco-editor .margin,
+.monaco-editor-background {
+  border-radius: 0 0 10px 10px;
+}
+
+/* Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out;
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+.animate-pulse-soft {
+  animation: pulse-soft 1.4s ease-in-out infinite;
+}

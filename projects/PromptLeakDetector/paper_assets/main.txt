@@ -1,0 +1,2 @@
+Main figure concept:
+A user query enters an LLM application. The application combines a hidden system prompt, private context documents, tool metadata, and the user query before producing a model output. PromptLeakDetector runs as a runtime firewall after generation. It compares the output against hidden context fingerprints, secret/PII regexes, internal tool names, and suspicious leakage phrases. If the leak score is below threshold, the response is released. If the score is above threshold, the output is blocked or replaced with a safe fallback.

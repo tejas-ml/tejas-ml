@@ -1,0 +1,37 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background:  #404040;
+    background-image: url('https://images.unsplash.com/photo-1673520587276-77478c8f0151?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80');
+}
+
+.card {
+    background: gray;
+    opacity: 80%;
+    padding: 2rem;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 420px;
+    margin: 1em;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+button {
+    margin: 0.5em;
+    border: none;
+    outline: none;
+}
+
+.search-bar {
+    border-radius: 20px;
+    padding: 0.5em;
+    width: 100%;
+}

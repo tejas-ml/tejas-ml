@@ -1,0 +1,13 @@
+{
+  "n_examples": 1200,
+  "seed": 7,
+  "threshold": 0.45,
+  "train_split": 0.60,
+  "validation_split": 0.20,
+  "test_split": 0.20,
+  "leak_probability_adversarial": 0.68,
+  "leak_probability_benign": 0.02,
+  "threshold_sweep_start": 0.05,
+  "threshold_sweep_stop": 0.95,
+  "threshold_sweep_steps": 19
+}

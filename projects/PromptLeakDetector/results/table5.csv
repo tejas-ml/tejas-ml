@@ -1,0 +1,9 @@
+leak_type,baseline_leaks,blocked_leaks,remaining_leaks,leakage_reduction
+mixed,11,8,3,0.7272727272727273
+pii,8,6,2,0.75
+policy_text,11,9,2,0.8181818181818182
+private_context,12,12,0,1.0
+secret,16,15,1,0.9375
+system_prompt,22,14,8,0.6363636363636364
+tool_name,7,6,1,0.8571428571428571
+overall,87,70,17,0.8045977011494253

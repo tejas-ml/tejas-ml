@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Cell Explorer — Animal vs Plant</title>
+  <meta name="description" content="Explore animal and plant cells side by side. Click organelles to learn what they do." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">◎</span>
+        <div>
+          <h1>Cell Explorer</h1>
+          <p class="tagline">Interactive animal &amp; plant cell tour</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button type="button" class="btn btn-ghost" id="reset-btn" title="Clear selection">Reset</button>
+        <span class="hint-pill">Click any organelle</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>Compare cells side by side</h2>
+      <p>
+        Both animal and plant cells are eukaryotic — they have a true nucleus and membrane-bound organelles.
+        Plants add a cell wall, chloroplasts, and a large central vacuole. Click structures in either diagram
+        to learn what they do.
+      </p>
+    </section>
+
+    <section class="cells-stage" aria-label="Animal and plant cell diagrams">
+      <!-- Animal Cell -->
+      <article class="cell-panel" data-cell="animal">
+        <div class="panel-head">
+          <span class="cell-badge animal">Animal</span>
+          <h3>Animal Cell</h3>
+          <p>No cell wall · Flexible shape · Lysosomes &amp; centrioles</p>
+        </div>
+        <div class="svg-wrap">
+          <svg class="cell-svg" viewBox="0 0 420 420" role="img" aria-label="Interactive animal cell diagram">
+            <defs>
+              <radialGradient id="animalCyto" cx="50%" cy="45%" r="55%">
+                <stop offset="0%" stop-color="#fef6f0"/>
+                <stop offset="100%" stop-color="#f3d9c8"/>
+              </radialGradient>
+              <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.12"/>
+              </filter>
+            </defs>
+
+            <!-- Cell membrane -->
+            <ellipse class="organelle" data-id="membrane" data-cell="animal"
+              cx="210" cy="210" rx="188" ry="175"
+              fill="url(#animalCyto)" stroke="#e07a5f" stroke-width="6" />
+            <ellipse cx="210" cy="210" rx="182" ry="169" fill="none" stroke="#f4a261" stroke-width="2" opacity="0.5"/>
+
+            <!-- Cytoplasm click zone (inner, lower priority visually) -->
+            <ellipse class="organelle" data-id="cytoplasm" data-cell="animal"
+              cx="210" cy="210" rx="165" ry="155"
+              fill="transparent" stroke="none" />
+
+            <!-- Rough ER -->
+            <path class="organelle" data-id="rer" data-cell="animal"
+              d="M95 145 C110 120, 145 125, 155 150 C165 175, 135 195, 115 185 C95 175, 80 160, 95 145 Z"
+              fill="#c9e4de" stroke="#2a9d8f" stroke-width="2" filter="url(#soft)"/>
+            <!-- ribosomes on RER -->
+            <circle cx="110" cy="145" r="3.5" fill="#264653"/><circle cx="125" cy="138" r="3.5" fill="#264653"/>
+            <circle cx="140" cy="145" r="3.5" fill="#264653"/><circle cx="130" cy="165" r="3.5" fill="#264653"/>
+            <circle cx="115" cy="170" r="3.5" fill="#264653"/>
+
+            <!-- Smooth ER -->
+            <path class="organelle" data-id="ser" data-cell="animal"
+              d="M250 95 C280 85, 310 100, 305 125 C300 150, 270 155, 255 140 C240 125, 235 105, 250 95 Z"
+              fill="#b8e0d2" stroke="#2a9d8f" stroke-width="2" filter="url(#soft)"/>
+
+            <!-- Golgi -->
+            <g class="organelle" data-id="golgi" data-cell="animal" filter="url(#soft)">
+              <ellipse cx="300" cy="200" rx="38" ry="10" fill="#e9c46a" stroke="#d4a017" stroke-width="1.5"/>
+              <ellipse cx="300" cy="215" rx="42" ry="11" fill="#f4d35e" stroke="#d4a017" stroke-width="1.5"/>
+              <ellipse cx="300" cy="230" rx="36" ry="10" fill="#e9c46a" stroke="#d4a017" stroke-width="1.5"/>
+              <ellipse cx="300" cy="244" rx="30" ry="8" fill="#f4d35e" stroke="#d4a017" stroke-width="1.5"/>
+              <circle cx="335" cy="215" r="5" fill="#e9c46a" stroke="#d4a017"/><circle cx="340" cy="230" r="4" fill="#e9c46a" stroke="#d4a017"/>
+            </g>
+
+            <!-- Mitochondria -->
+            <g class="organelle" data-id="mitochondria" data-cell="animal" filter="url(#soft)">
+              <ellipse cx="130" cy="260" rx="32" ry="16" fill="#e76f51" stroke="#c44536" stroke-width="2"/>
+              <path d="M108 260 Q120 250 132 260 Q144 270 152 260" fill="none" stroke="#9b2226" stroke-width="2"/>
+              <path d="M112 265 Q124 255 136 265" fill="none" stroke="#9b2226" stroke-width="1.5"/>
+            </g>
+            <g class="organelle" data-id="mitochondria" data-cell="animal" filter="url(#soft)">
+              <ellipse cx="280" cy="300" rx="28" ry="14" fill="#e76f51" stroke="#c44536" stroke-width="2"/>
+              <path d="M260 300 Q272 292 284 300 Q296 308 300 300" fill="none" stroke="#9b2226" stroke-width="2"/>
+            </g>
+
+            <!-- Lysosomes -->
+            <circle class="organelle" data-id="lysosome" data-cell="animal"
+              cx="180" cy="300" r="14" fill="#9b5de5" stroke="#7b2cbf" stroke-width="2" filter="url(#soft)"/>
+            <circle class="organelle" data-id="lysosome" data-cell="animal"
+              cx="200" cy="320" r="10" fill="#c77dff" stroke="#7b2cbf" stroke-width="1.5" filter="url(#soft)"/>
+
+            <!-- Free ribosomes -->
+            <g class="organelle" data-id="ribosome" data-cell="animal">
+              <circle cx="95" cy="220" r="4" fill="#264653"/><circle cx="105" cy="228" r="4" fill="#264653"/>
+              <circle cx="88" cy="232" r="3.5" fill="#264653"/><circle cx="340" cy="160" r="4" fill="#264653"/>
+              <circle cx="348" cy="170" r="3.5" fill="#264653"/><circle cx="330" cy="175" r="3.5" fill="#264653"/>
+            </g>
+
+            <!-- Centrioles -->
+            <g class="organelle" data-id="centriole" data-cell="animal" filter="url(#soft)">
+              <rect x="155" y="95" width="10" height="28" rx="3" fill="#457b9d" stroke="#1d3557" stroke-width="1.5" transform="rotate(-20 160 109)"/>
+              <rect x="168" y="98" width="10" height="28" rx="3" fill="#457b9d" stroke="#1d3557" stroke-width="1.5" transform="rotate(25 173 112)"/>
+            </g>
+
+            <!-- Small vacuoles -->
+            <ellipse class="organelle" data-id="vacuole-animal" data-cell="animal"
+              cx="250" cy="280" rx="16" ry="12" fill="#90e0ef" stroke="#00b4d8" stroke-width="1.5" opacity="0.85" filter="url(#soft)"/>
+
+            <!-- Nucleus -->
+            <ellipse class="organelle" data-id="nucleus" data-cell="animal"
+              cx="200" cy="195" rx="52" ry="48"
+              fill="#a8dadc" stroke="#457b9d" stroke-width="3.5" filter="url(#soft)"/>
+            <ellipse cx="200" cy="195" rx="46" ry="42" fill="none" stroke="#457b9d" stroke-width="1" opacity="0.4" stroke-dasharray="3 2"/>
+            <!-- Nucleolus -->
+            <circle class="organelle" data-id="nucleolus" data-cell="animal"
+              cx="208" cy="190" r="14" fill="#1d3557" filter="url(#soft)"/>
+            <!-- Chromatin hints -->
+            <path d="M175 185 Q185 175 195 188" fill="none" stroke="#457b9d" stroke-width="2" opacity="0.5"/>
+            <path d="M210 210 Q220 200 230 212" fill="none" stroke="#457b9d" stroke-width="2" opacity="0.5"/>
+          </svg>
+        </div>
+        <ul class="organelle-list" id="animal-list"></ul>
+      </article>
+
+      <!-- Plant Cell -->
+      <article class="cell-panel" data-cell="plant">
+        <div class="panel-head">
+          <span class="cell-badge plant">Plant</span>
+          <h3>Plant Cell</h3>
+          <p>Cell wall · Chloroplasts · Large central vacuole</p>
+        </div>
+        <div class="svg-wrap">
+          <svg class="cell-svg" viewBox="0 0 420 420" role="img" aria-label="Interactive plant cell diagram">
+            <defs>
+              <radialGradient id="plantCyto" cx="40%" cy="40%" r="60%">
+                <stop offset="0%" stop-color="#f0faf4"/>
+                <stop offset="100%" stop-color="#d8f3dc"/>
+              </radialGradient>
+              <linearGradient id="vacGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#90e0ef" stop-opacity="0.55"/>
+                <stop offset="100%" stop-color="#48cae4" stop-opacity="0.75"/>
+              </linearGradient>
+            </defs>
+
+            <!-- Cell wall -->
+            <rect class="organelle" data-id="cell-wall" data-cell="plant"
+              x="28" y="38" width="364" height="344" rx="28" ry="28"
+              fill="#d4a373" stroke="#bc6c25" stroke-width="8" />
+            <!-- Membrane just inside wall -->
+            <rect class="organelle" data-id="membrane" data-cell="plant"
+              x="40" y="50" width="340" height="320" rx="22" ry="22"
+              fill="url(#plantCyto)" stroke="#2d6a4f" stroke-width="3.5" />
+
+            <!-- Cytoplasm click zone -->
+            <rect class="organelle" data-id="cytoplasm" data-cell="plant"
+              x="48" y="58" width="324" height="304" rx="18"
+              fill="transparent" stroke="none" />
+
+            <!-- Large central vacuole -->
+            <ellipse class="organelle" data-id="vacuole-plant" data-cell="plant"
+              cx="230" cy="230" rx="105" ry="115"
+              fill="url(#vacGrad)" stroke="#0096c7" stroke-width="2.5" filter="url(#soft)"/>
+
+            <!-- Chloroplasts -->
+            <g class="organelle" data-id="chloroplast" data-cell="plant" filter="url(#soft)">
+              <ellipse cx="95" cy="120" rx="36" ry="18" fill="#52b788" stroke="#1b4332" stroke-width="2"/>
+              <path d="M70 120 Q85 112 100 120 Q115 128 120 120" fill="none" stroke="#2d6a4f" stroke-width="1.5"/>
+              <path d="M75 125 Q90 117 105 125" fill="none" stroke="#2d6a4f" stroke-width="1.2"/>
+            </g>
+            <g class="organelle" data-id="chloroplast" data-cell="plant" filter="url(#soft)">
+              <ellipse cx="100" cy="280" rx="34" ry="17" fill="#40916c" stroke="#1b4332" stroke-width="2"/>
+              <path d="M78 280 Q92 272 106 280 Q118 288 124 280" fill="none" stroke="#2d6a4f" stroke-width="1.5"/>
+            </g>
+            <g class="organelle" data-id="chloroplast" data-cell="plant" filter="url(#soft)">
+              <ellipse cx="340" cy="140" rx="32" ry="16" fill="#52b788" stroke="#1b4332" stroke-width="2"/>
+              <path d="M318 140 Q332 133 345 140 Q355 147 362 140" fill="none" stroke="#2d6a4f" stroke-width="1.5"/>
+            </g>
+            <g class="organelle" data-id="chloroplast" data-cell="plant" filter="url(#soft)">
+              <ellipse cx="330" cy="300" rx="30" ry="15" fill="#74c69d" stroke="#1b4332" stroke-width="2"/>
+              <path d="M310 300 Q322 293 334 300 Q344 307 350 300" fill="none" stroke="#2d6a4f" stroke-width="1.5"/>
+            </g>
+
+            <!-- Mitochondria -->
+            <g class="organelle" data-id="mitochondria" data-cell="plant" filter="url(#soft)">
+              <ellipse cx="95" cy="200" rx="26" ry="13" fill="#e76f51" stroke="#c44536" stroke-width="2"/>
+              <path d="M78 200 Q88 193 98 200 Q108 207 114 200" fill="none" stroke="#9b2226" stroke-width="1.8"/>
+            </g>
+            <g class="organelle" data-id="mitochondria" data-cell="plant" filter="url(#soft)">
+              <ellipse cx="340" cy="220" rx="24" ry="12" fill="#e76f51" stroke="#c44536" stroke-width="2"/>
+              <path d="M324 220 Q334 214 344 220 Q352 226 356 220" fill="none" stroke="#9b2226" stroke-width="1.8"/>
+            </g>
+
+            <!-- Golgi -->
+            <g class="organelle" data-id="golgi" data-cell="plant" filter="url(#soft)">
+              <ellipse cx="120" cy="340" rx="30" ry="8" fill="#e9c46a" stroke="#d4a017" stroke-width="1.5"/>
+              <ellipse cx="120" cy="352" rx="34" ry="9" fill="#f4d35e" stroke="#d4a017" stroke-width="1.5"/>
+              <ellipse cx="120" cy="364" rx="28" ry="7" fill="#e9c46a" stroke="#d4a017" stroke-width="1.5"/>
+            </g>
+
+            <!-- Rough ER -->
+            <path class="organelle" data-id="rer" data-cell="plant"
+              d="M300 80 C320 70, 350 80, 345 100 C340 120, 310 125, 295 110 C280 95, 285 88, 300 80 Z"
+              fill="#c9e4de" stroke="#2a9d8f" stroke-width="2" filter="url(#soft)"/>
+            <circle cx="310" cy="88" r="3" fill="#264653"/><circle cx="325" cy="85" r="3" fill="#264653"/>
+            <circle cx="335" cy="95" r="3" fill="#264653"/><circle cx="318" cy="105" r="3" fill="#264653"/>
+
+            <!-- Smooth ER -->
+            <path class="organelle" data-id="ser" data-cell="plant"
+              d="M70 150 C55 140, 50 160, 62 170 C74 180, 88 172, 85 160 C82 148, 78 155, 70 150 Z"
+              fill="#b8e0d2" stroke="#2a9d8f" stroke-width="2" filter="url(#soft)"/>
+
+            <!-- Ribosomes -->
+            <g class="organelle" data-id="ribosome" data-cell="plant">
+              <circle cx="75" cy="240" r="3.5" fill="#264653"/><circle cx="82" cy="248" r="3.5" fill="#264653"/>
+              <circle cx="350" cy="260" r="3.5" fill="#264653"/><circle cx="355" cy="270" r="3" fill="#264653"/>
+            </g>
+
+            <!-- Nucleus (pushed to side by vacuole) -->
+            <ellipse class="organelle" data-id="nucleus" data-cell="plant"
+              cx="155" cy="130" rx="42" ry="38"
+              fill="#a8dadc" stroke="#457b9d" stroke-width="3.5" filter="url(#soft)"/>
+            <ellipse cx="155" cy="130" rx="36" ry="32" fill="none" stroke="#457b9d" stroke-width="1" opacity="0.4" stroke-dasharray="3 2"/>
+            <circle class="organelle" data-id="nucleolus" data-cell="plant"
+              cx="160" cy="125" r="12" fill="#1d3557" filter="url(#soft)"/>
+          </svg>
+        </div>
+        <ul class="organelle-list" id="plant-list"></ul>
+      </article>
+    </section>
+
+    <!-- Detail panel -->
+    <aside class="detail-panel" id="detail-panel" aria-live="polite">
+      <div class="detail-empty" id="detail-empty">
+        <div class="detail-empty-icon" aria-hidden="true">🔬</div>
+        <h3>Select an organelle</h3>
+        <p>Click a structure in either cell diagram, or use the lists below each diagram.</p>
+      </div>
+      <div class="detail-content hidden" id="detail-content">
+        <div class="detail-top">
+          <span class="detail-swatch" id="detail-swatch"></span>
+          <div>
+            <p class="detail-cell-label" id="detail-cell-label"></p>
+            <h3 id="detail-title"></h3>
+          </div>
+        </div>
+        <p class="detail-summary" id="detail-summary"></p>
+        <div class="detail-facts">
+          <div class="fact">
+            <span class="fact-label">Function</span>
+            <p id="detail-function"></p>
+          </div>
+          <div class="fact">
+            <span class="fact-label">Found in</span>
+            <p id="detail-found"></p>
+          </div>
+          <div class="fact fact-fun">
+            <span class="fact-label">Fun fact</span>
+            <p id="detail-fun"></p>
+          </div>
+        </div>
+        <div class="compare-row" id="compare-row"></div>
+      </div>
+    </aside>
+
+    <section class="legend-section">
+      <h2>Quick differences</h2>
+      <div class="diff-grid">
+        <div class="diff-card">
+          <h4>Only in plant cells</h4>
+          <ul>
+            <li><strong>Cell wall</strong> — rigid cellulose support</li>
+            <li><strong>Chloroplasts</strong> — photosynthesis</li>
+            <li><strong>Large central vacuole</strong> — storage &amp; turgor</li>
+          </ul>
+        </div>
+        <div class="diff-card">
+          <h4>Only in animal cells</h4>
+          <ul>
+            <li><strong>Lysosomes</strong> — more prominent digestion</li>
+            <li><strong>Centrioles</strong> — help organize cell division</li>
+            <li><strong>Flexible membrane only</strong> — no rigid wall</li>
+          </ul>
+        </div>
+        <div class="diff-card">
+          <h4>Shared (both)</h4>
+          <ul>
+            <li>Nucleus &amp; nucleolus</li>
+            <li>Mitochondria, ribosomes, ER, Golgi</li>
+            <li>Cell membrane &amp; cytoplasm</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Interactive Cell Explorer · Built for learning · Light mode</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

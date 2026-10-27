@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Find the best U.S. credit cards for travel, cash back, dining, and more. Compare benefits from Chase, Amex, Capital One, Citi, and other U.S. issuers — then apply." />
+  <title>CardFind — Best U.S. Credit Cards</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💳</text></svg>" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo" aria-label="CardFind home">
+        <span class="logo-mark">💳</span>
+        <span class="logo-text">Card<span class="logo-accent">Find</span></span>
+      </a>
+
+      <div class="header-search">
+        <label class="search-wrap" for="search-input">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"/>
+            <path d="M20 20l-3.5-3.5"/>
+          </svg>
+          <input
+            id="search-input"
+            type="search"
+            placeholder="Search U.S. cards, banks, benefits…"
+            autocomplete="off"
+            spellcheck="false"
+          />
+          <kbd class="search-kbd" id="search-kbd">/</kbd>
+        </label>
+      </div>
+
+      <div class="header-actions">
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+          </svg>
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M21 14.5A8.5 8.5 0 1 1 9.5 3a7 7 0 0 0 11.5 11.5z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="hero-eyebrow">
+          <span class="us-badge" aria-hidden="true">🇺🇸</span>
+          U.S. credit cards · Compare · Filter · Apply
+        </p>
+        <h1 class="hero-title">Find the <em>best</em> U.S. credit card</h1>
+        <p class="hero-sub">
+          Compare top American credit cards for travel, cash back, dining, and more.
+          Filter by benefits, search Chase, Amex, Capital One, and others — then apply on the issuer’s site.
+        </p>
+      </div>
+    </section>
+
+    <section class="top-picks" aria-labelledby="top-picks-heading">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="top-picks-heading">Top U.S. picks by category</h2>
+          <p>Standout American cards for the most popular benefit types.</p>
+        </div>
+        <div class="top-picks-grid" id="top-picks-grid"></div>
+      </div>
+    </section>
+
+    <section class="finder" aria-labelledby="finder-heading">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="finder-heading">All U.S. cards</h2>
+          <p>Browse popular cards from major U.S. banks and issuers. Filter by rewards, fees, and lifestyle.</p>
+        </div>
+
+        <div class="filters-bar">
+          <div class="filters" id="filters" role="group" aria-label="Filter by benefit">
+            <button type="button" class="filter-chip active" data-filter="all">All</button>
+            <button type="button" class="filter-chip" data-filter="travel">✈️ Travel</button>
+            <button type="button" class="filter-chip" data-filter="lounge">🛋️ Lounge Access</button>
+            <button type="button" class="filter-chip" data-filter="cashback">💵 Cash Back</button>
+            <button type="button" class="filter-chip" data-filter="dining">🍽️ Dining</button>
+            <button type="button" class="filter-chip" data-filter="gas">⛽ Gas</button>
+            <button type="button" class="filter-chip" data-filter="groceries">🛒 Groceries</button>
+            <button type="button" class="filter-chip" data-filter="no-fee">✨ No Annual Fee</button>
+            <button type="button" class="filter-chip" data-filter="premium">💎 Premium</button>
+            <button type="button" class="filter-chip" data-filter="business">💼 Business</button>
+            <button type="button" class="filter-chip" data-filter="student">🎓 Student</button>
+            <button type="button" class="filter-chip" data-filter="secured">🔒 Secured</button>
+            <button type="button" class="filter-chip" data-filter="airline">🛫 Airline</button>
+            <button type="button" class="filter-chip" data-filter="shopping">🛍️ Shopping</button>
+            <button type="button" class="filter-chip" data-filter="points">⭐ Points</button>
+          </div>
+
+          <div class="sort-wrap">
+            <label for="sort-select">Sort</label>
+            <select id="sort-select">
+              <option value="rating">Top rated</option>
+              <option value="name">Name A–Z</option>
+              <option value="fee-low">Lowest annual fee</option>
+              <option value="fee-high">Highest annual fee</option>
+              <option value="bonus">Biggest welcome bonus</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="results-meta">
+          <span id="results-count">0 cards</span>
+          <button type="button" class="clear-filters" id="clear-filters" hidden>Clear filters</button>
+        </div>
+
+        <div class="cards-grid" id="cards-grid"></div>
+        <div class="empty-state" id="empty-state" hidden>
+          <p>No cards match your search or filters.</p>
+          <button type="button" class="btn btn-secondary" id="reset-search">Reset search</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="logo-mark">💳</span>
+          <span class="logo-text">Card<span class="logo-accent">Find</span></span>
+        </div>
+        <a
+          class="github-link"
+          href="https://github.com/tejas-ml"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Tejas Mahajan on GitHub"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.23c-3.34.73-4.03-1.42-4.03-1.42-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58A12.01 12.01 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          <span>github.com/tejas-ml</span>
+        </a>
+      </div>
+      <p class="footer-note">
+        Focused on U.S. consumer and small-business credit cards. Offers and rates change —
+        always verify details on the issuer’s official site before applying. Not affiliated with any bank or card network.
+        Available only where issued in the United States; eligibility and approval are determined by the issuer.
+      </p>
+      <p class="footer-copy">© <span id="year"></span> CardFind · Built by <a href="https://github.com/tejas-ml" target="_blank" rel="noopener noreferrer">Tejas Mahajan</a></p>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

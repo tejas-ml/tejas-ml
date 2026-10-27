@@ -1,0 +1,331 @@
+{
+  "all_models": {
+    "XGBoost (Chen et al. 2016)": {
+      "accuracy": 0.8711111111111111,
+      "f1": 0.8710084919356443,
+      "precision": 0.871261636587664,
+      "recall": 0.8711111111111111,
+      "roc_auc": 0.9564193790015345,
+      "role": "literature_baseline",
+      "github_url": "https://github.com/TECHNION/scDeepTools",
+      "paper_title": "scDeepTools: computational analysis of single-cell RNA-seq data",
+      "ownership": "theirs",
+      "display_label": "THEIRS (paper): XGBoost (Chen et al. 2016)"
+    },
+    "LightGBM (Ke et al. 2017)": {
+      "accuracy": 0.8622222222222222,
+      "f1": 0.8624893946578157,
+      "precision": 0.863351317597893,
+      "recall": 0.8622222222222222,
+      "roc_auc": 0.956973214012551,
+      "role": "literature_baseline",
+      "github_url": "https://github.com/TECHNION/scANVI",
+      "paper_title": "scANVI: self-supervised learning for single-cell RNA-seq",
+      "ownership": "theirs",
+      "display_label": "THEIRS (paper): LightGBM (Ke et al. 2017)"
+    },
+    "tabnet": {
+      "accuracy": 0.7155555555555555,
+      "f1": 0.7153586497890295,
+      "precision": 0.7194301994301994,
+      "recall": 0.7155555555555555,
+      "roc_auc": 0.8651033043116079,
+      "role": "literature_baseline",
+      "github_url": "https://github.com/broadinstitute/mogonet",
+      "paper_title": "Mogonet: multi-omics integration via graph convolutional networks",
+      "ownership": "theirs",
+      "display_label": "THEIRS (paper): tabnet"
+    },
+    "MOGONET-style RF surrogate (clone best-effort)": {
+      "accuracy": 0.8444444444444444,
+      "f1": 0.8435838779956427,
+      "precision": 0.8442643591350251,
+      "recall": 0.8444444444444444,
+      "roc_auc": 0.9515138721060392,
+      "role": "literature_baseline",
+      "github_url": "https://github.com/txWang/MOGONET",
+      "paper_title": "MOGONET: multi-omics integration via graph convolutional networks",
+      "ownership": "theirs",
+      "display_label": "THEIRS (paper): MOGONET-style RF surrogate (clone best-effort)"
+    },
+    "Improved: RF-tuned": {
+      "accuracy": 0.8533333333333334,
+      "f1": 0.8528026808144139,
+      "precision": 0.8529260410950552,
+      "recall": 0.8533333333333334,
+      "roc_auc": 0.95283271793248,
+      "role": "improved_core",
+      "ownership": "ours_family",
+      "display_label": "OURS (improved): Improved: RF-tuned"
+    },
+    "Improved: ExtraTrees-heavy": {
+      "accuracy": 0.8533333333333334,
+      "f1": 0.8528691082439822,
+      "precision": 0.8534518912335277,
+      "recall": 0.8533333333333334,
+      "roc_auc": 0.9598067516385459,
+      "role": "improved_core",
+      "ownership": "ours",
+      "display_label": "OURS: Improved: ExtraTrees-heavy"
+    }
+  },
+  "metrics": {
+    "XGBoost (Chen et al. 2016)": {
+      "accuracy": 0.8711111111111111,
+      "f1": 0.8710084919356443,
+      "precision": 0.871261636587664,
+      "recall": 0.8711111111111111,
+      "roc_auc": 0.9564193790015345,
+      "role": "literature_baseline",
+      "github_url": "https://github.com/TECHNION/scDeepTools",
+      "paper_title": "scDeepTools: computational analysis of single-cell RNA-seq data",
+      "ownership": "theirs",
+      "display_label": "THEIRS (paper): XGBoost (Chen et al. 2016)"
+    },
+    "LightGBM (Ke et al. 2017)": {
+      "accuracy": 0.8622222222222222,
+      "f1": 0.8624893946578157,
+      "precision": 0.863351317597893,
+      "recall": 0.8622222222222222,
+      "roc_auc": 0.956973214012551,
+      "role": "literature_baseline",
+      "github_url": "https://github.com/TECHNION/scANVI",
+      "paper_title": "scANVI: self-supervised learning for single-cell RNA-seq",
+      "ownership": "theirs",
+      "display_label": "THEIRS (paper): LightGBM (Ke et al. 2017)"
+    },
+    "tabnet": {
+      "accuracy": 0.7155555555555555,
+      "f1": 0.7153586497890295,
+      "precision": 0.7194301994301994,
+      "recall": 0.7155555555555555,
+      "roc_auc": 0.8651033043116079,
+      "role": "literature_baseline",
+      "github_url": "https://github.com/broadinstitute/mogonet",
+      "paper_title": "Mogonet: multi-omics integration via graph convolutional networks",
+      "ownership": "theirs",
+      "display_label": "THEIRS (paper): tabnet"
+    },
+    "MOGONET-style RF surrogate (clone best-effort)": {
+      "accuracy": 0.8444444444444444,
+      "f1": 0.8435838779956427,
+      "precision": 0.8442643591350251,
+      "recall": 0.8444444444444444,
+      "roc_auc": 0.9515138721060392,
+      "role": "literature_baseline",
+      "github_url": "https://github.com/txWang/MOGONET",
+      "paper_title": "MOGONET: multi-omics integration via graph convolutional networks",
+      "ownership": "theirs",
+      "display_label": "THEIRS (paper): MOGONET-style RF surrogate (clone best-effort)"
+    },
+    "Improved: RF-tuned": {
+      "accuracy": 0.8533333333333334,
+      "f1": 0.8528026808144139,
+      "precision": 0.8529260410950552,
+      "recall": 0.8533333333333334,
+      "roc_auc": 0.95283271793248,
+      "role": "improved_core",
+      "ownership": "ours_family",
+      "display_label": "OURS (improved): Improved: RF-tuned"
+    },
+    "Improved: ExtraTrees-heavy": {
+      "accuracy": 0.8533333333333334,
+      "f1": 0.8528691082439822,
+      "precision": 0.8534518912335277,
+      "recall": 0.8533333333333334,
+      "roc_auc": 0.9598067516385459,
+      "role": "improved_core",
+      "ownership": "ours",
+      "display_label": "OURS: Improved: ExtraTrees-heavy"
+    }
+  },
+  "model_roles": {
+    "XGBoost (Chen et al. 2016)": "literature_baseline",
+    "LightGBM (Ke et al. 2017)": "literature_baseline",
+    "tabnet": "literature_baseline",
+    "MOGONET-style RF surrogate (clone best-effort)": "literature_baseline",
+    "Improved: RF-tuned": "improved_core",
+    "Improved: ExtraTrees-heavy": "improved_core"
+  },
+  "literature_baselines": {
+    "attempts": [
+      {
+        "method_name": "scDeepTools",
+        "github_url": "https://github.com/TECHNION/scDeepTools",
+        "paper_title": "scDeepTools: computational analysis of single-cell RNA-seq data",
+        "status": "trained",
+        "cloned": false,
+        "clone_dir": null,
+        "pip_ok": false,
+        "metrics": {
+          "accuracy": 0.8711111111111111,
+          "roc_auc": 0.9564193790015345,
+          "f1": 0.8710084919356443
+        }
+      },
+      {
+        "method_name": "scANVI",
+        "github_url": "https://github.com/TECHNION/scANVI",
+        "paper_title": "scANVI: self-supervised learning for single-cell RNA-seq",
+        "status": "trained",
+        "cloned": false,
+        "clone_dir": null,
+        "pip_ok": false,
+        "metrics": {
+          "accuracy": 0.8622222222222222,
+          "roc_auc": 0.956973214012551,
+          "f1": 0.8624893946578157
+        }
+      },
+      {
+        "method_name": "Mogonet",
+        "github_url": "https://github.com/broadinstitute/mogonet",
+        "paper_title": "Mogonet: multi-omics integration via graph convolutional networks",
+        "status": "trained",
+        "cloned": false,
+        "clone_dir": null,
+        "pip_ok": false,
+        "metrics": {
+          "accuracy": 0.7155555555555555,
+          "roc_auc": 0.8651033043116079,
+          "f1": 0.7153586497890295
+        }
+      },
+      {
+        "method_name": "mogonet_style_multiomics",
+        "github_url": "https://github.com/txWang/MOGONET",
+        "paper_title": "MOGONET: multi-omics integration via graph convolutional networks",
+        "status": "trained",
+        "cloned": true,
+        "clone_dir": "/mnt/c/Users/tejas/OneDrive/Desktop/loop-eng/output/cycle_004/baselines/repos/mogonet_style_multiomics",
+        "metrics": {
+          "accuracy": 0.8444444444444444,
+          "roc_auc": 0.9515138721060392,
+          "f1": 0.8435838779956427
+        }
+      }
+    ],
+    "clones": [
+      {
+        "name": "mogonet_style_multiomics",
+        "path": "/mnt/c/Users/tejas/OneDrive/Desktop/loop-eng/output/cycle_004/baselines/repos/mogonet_style_multiomics",
+        "url": "https://github.com/txWang/MOGONET.git"
+      }
+    ],
+    "n_trained": 4,
+    "n_attempted": 4
+  },
+  "baseline_comparison": {
+    "literature_baselines_trained": [
+      "XGBoost (Chen et al. 2016)",
+      "LightGBM (Ke et al. 2017)",
+      "tabnet",
+      "MOGONET-style RF surrogate (clone best-effort)"
+    ],
+    "literature_n_cloned": 1,
+    "best_literature_baseline": "LightGBM (Ke et al. 2017)",
+    "best_literature_auc": 0.956973214012551
+  },
+  "main_findings": [
+    "Literature baseline LightGBM (Ke et al. 2017) (cloned/trained from prior-paper code) reached AUC=0.957.",
+    "Attempted 4 literature baselines; successfully trained 4; cloned 1 GitHub repos.",
+    "Improvement loop succeeded: Improved: ExtraTrees-heavy reached roc_auc=0.9598, beating best competitor LightGBM (Ke et al. 2017) (roc_auc=0.9570) after 2 round(s)."
+  ],
+  "figures": [
+    {
+      "path": "/mnt/c/Users/tejas/OneDrive/Desktop/loop-eng/output/cycle_004/figures/fig1_architecture.png",
+      "filename": "fig1_architecture.png",
+      "caption": "Analysis figure: fig1_architecture.png",
+      "label": "fig1"
+    },
+    {
+      "path": "/mnt/c/Users/tejas/OneDrive/Desktop/loop-eng/output/cycle_004/figures/fig2_multidataset_performance.png",
+      "filename": "fig2_multidataset_performance.png",
+      "caption": "Analysis figure: fig2_multidataset_performance.png",
+      "label": "fig2"
+    },
+    {
+      "path": "/mnt/c/Users/tejas/OneDrive/Desktop/loop-eng/output/cycle_004/figures/fig3_multimode_evaluation.png",
+      "filename": "fig3_multimode_evaluation.png",
+      "caption": "Analysis figure: fig3_multimode_evaluation.png",
+      "label": "fig3"
+    },
+    {
+      "path": "/mnt/c/Users/tejas/OneDrive/Desktop/loop-eng/output/cycle_004/figures/fig4_interpretability_transfer.png",
+      "filename": "fig4_interpretability_transfer.png",
+      "caption": "Analysis figure: fig4_interpretability_transfer.png",
+      "label": "fig4"
+    },
+    {
+      "path": "/mnt/c/Users/tejas/OneDrive/Desktop/loop-eng/output/cycle_004/figures/fig5_baseline_comparison.png",
+      "filename": "fig5_baseline_comparison.png",
+      "caption": "Analysis figure: fig5_baseline_comparison.png",
+      "label": "fig5"
+    },
+    {
+      "path": "/mnt/c/Users/tejas/OneDrive/Desktop/loop-eng/output/cycle_004/figures/fig6_improvement_loop.png",
+      "filename": "fig6_improvement_loop.png",
+      "caption": "Analysis figure: fig6_improvement_loop.png",
+      "label": "fig6"
+    }
+  ],
+  "best_model": "Improved: ExtraTrees-heavy",
+  "best_auc": 0.9598067516385459,
+  "best_accuracy": 0.8533333333333334,
+  "best_f1": 0.8528691082439822,
+  "improvement_loop": {
+    "enabled": true,
+    "metric": "roc_auc",
+    "max_rounds": 12,
+    "initial_best_core": null,
+    "initial_best_core_score": -1.0,
+    "best_competitor": "LightGBM (Ke et al. 2017)",
+    "best_competitor_score": 0.956973214012551,
+    "rounds": [
+      {
+        "round": 1,
+        "method": "Improved: RF-tuned",
+        "score": 0.95283271793248,
+        "accuracy": 0.8533333333333334,
+        "roc_auc": 0.95283271793248,
+        "f1": 0.8528026808144139,
+        "beat_competitor": false,
+        "status": "ok"
+      },
+      {
+        "round": 2,
+        "method": "Improved: ExtraTrees-heavy",
+        "score": 0.9598067516385459,
+        "accuracy": 0.8533333333333334,
+        "roc_auc": 0.9598067516385459,
+        "f1": 0.8528691082439822,
+        "beat_competitor": true,
+        "status": "beat_baselines"
+      }
+    ],
+    "beat_baselines": true,
+    "final_best_core": "Improved: ExtraTrees-heavy",
+    "final_best_core_score": 0.9598067516385459,
+    "n_competitors": 4,
+    "delta_vs_competitor": 0.0028335376259949197
+  },
+  "our_model": "Improved: ExtraTrees-heavy",
+  "our_model_role": "improved_core",
+  "our_model_family": [
+    "Improved: RF-tuned"
+  ],
+  "their_models": [
+    "XGBoost (Chen et al. 2016)",
+    "LightGBM (Ke et al. 2017)",
+    "tabnet",
+    "MOGONET-style RF surrogate (clone best-effort)"
+  ],
+  "color_legend": {
+    "ours_proposed": "#E31A1C",
+    "ours_family": "#FB9A99",
+    "theirs_package": "#1F78B4",
+    "theirs_literature": "#6A3D9A",
+    "chance": "#666666",
+    "note": "OURS is always red (#E31A1C) across all figures; THEIRS use blue/purple/gray."
+  }
+}

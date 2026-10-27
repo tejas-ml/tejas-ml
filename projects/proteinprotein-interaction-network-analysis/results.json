@@ -1,0 +1,82 @@
+{
+  "best_model": "SVM",
+  "best_auc": 0.9957010582010581,
+  "best_accuracy": 0.9736842105263158,
+  "best_f1": 0.9737469960380177,
+  "n_samples": 569,
+  "n_features": 30,
+  "n_classes": 2,
+  "class_names": [
+    "malignant",
+    "benign"
+  ],
+  "all_models": {
+    "Random Forest": {
+      "accuracy": 0.956140350877193,
+      "f1": 0.9560273762928302,
+      "precision": 0.9560729421281235,
+      "recall": 0.956140350877193,
+      "roc_auc": 0.9937169312169312,
+      "cv_accuracy_mean": 0.9560937742586555,
+      "cv_accuracy_std": 0.012339688646904016
+    },
+    "SVM": {
+      "accuracy": 0.9736842105263158,
+      "f1": 0.9737469960380177,
+      "precision": 0.9739686589549538,
+      "recall": 0.9736842105263158,
+      "roc_auc": 0.9957010582010581,
+      "cv_accuracy_mean": 0.9789163173420278,
+      "cv_accuracy_std": 0.011889826727401107
+    },
+    "Logistic Regression": {
+      "accuracy": 0.9824561403508771,
+      "f1": 0.9824561403508771,
+      "precision": 0.9824561403508771,
+      "recall": 0.9824561403508771,
+      "roc_auc": 0.9953703703703703,
+      "cv_accuracy_mean": 0.9736686849868033,
+      "cv_accuracy_std": 0.016627222216787987
+    },
+    "Gradient Boosting": {
+      "accuracy": 0.956140350877193,
+      "f1": 0.9557756825927252,
+      "precision": 0.9568690958164642,
+      "recall": 0.956140350877193,
+      "roc_auc": 0.9907407407407408,
+      "cv_accuracy_mean": 0.9490762303990063,
+      "cv_accuracy_std": 0.023749711666371215
+    },
+    "K-Nearest Neighbors": {
+      "accuracy": 0.9649122807017544,
+      "f1": 0.9647247085304307,
+      "precision": 0.9651849217638692,
+      "recall": 0.9649122807017544,
+      "roc_auc": 0.9791666666666666,
+      "cv_accuracy_mean": 0.9666045645086166,
+      "cv_accuracy_std": 0.014043397605618147
+    }
+  },
+  "figures": [
+    {
+      "filename": "fig1_data_overview.png",
+      "caption": "Dataset overview: class distribution, feature distributions, PCA projection, and correlation matrix."
+    },
+    {
+      "filename": "fig2_architecture.png",
+      "caption": "Analysis pipeline architecture showing data flow through preprocessing, classification ensemble, and evaluation stages."
+    },
+    {
+      "filename": "fig3_performance.png",
+      "caption": "Model performance: ROC curves and comparative performance metrics for all classifiers."
+    },
+    {
+      "filename": "fig4_feature_analysis.png",
+      "caption": "Feature importance (Random Forest Gini) and confusion matrix for the best-performing model."
+    },
+    {
+      "filename": "fig5_validation.png",
+      "caption": "Model validation: cross-validation accuracy comparison and learning curve analysis."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "enabled": true,
+  "metric": "roc_auc",
+  "max_rounds": 12,
+  "initial_best_core": null,
+  "initial_best_core_score": -1.0,
+  "best_competitor": "LightGBM (Ke et al. 2017)",
+  "best_competitor_score": 0.956973214012551,
+  "rounds": [
+    {
+      "round": 1,
+      "method": "Improved: RF-tuned",
+      "score": 0.95283271793248,
+      "accuracy": 0.8533333333333334,
+      "roc_auc": 0.95283271793248,
+      "f1": 0.8528026808144139,
+      "beat_competitor": false,
+      "status": "ok"
+    },
+    {
+      "round": 2,
+      "method": "Improved: ExtraTrees-heavy",
+      "score": 0.9598067516385459,
+      "accuracy": 0.8533333333333334,
+      "roc_auc": 0.9598067516385459,
+      "f1": 0.8528691082439822,
+      "beat_competitor": true,
+      "status": "beat_baselines"
+    }
+  ],
+  "beat_baselines": true,
+  "final_best_core": "Improved: ExtraTrees-heavy",
+  "final_best_core_score": 0.9598067516385459,
+  "n_competitors": 4,
+  "delta_vs_competitor": 0.0028335376259949197
+}

@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use ModelCardSec, please cite this software artifact."
+title: "ModelCardSec: Automated Privacy and Security Risk Profiling for Machine Learning Models"
+authors:
+  - family-names: Mahajan
+    given-names: Tejas
+version: 0.1.0
+date-released: 2026-06-24
+license: MIT

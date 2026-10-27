@@ -1,0 +1,59 @@
+\documentclass[10pt,conference]{IEEEtran}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage{hyperref}
+
+\title{ModelCardSec: Automated Privacy and Security Risk Profiling for Machine Learning Models}
+\author{Tejas Mahajan\\Department of Computer Science\\University of Central Florida}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Machine-learning teams increasingly need deployment evidence for security and privacy risks, but many audits are performed as slow manual checklists. We present ModelCardSec, a lightweight automated scanner that produces a security model card for candidate models. Given a model and dataset, ModelCardSec evaluates robustness to perturbations, membership-inference exposure, probability calibration, PII leakage signals, unsafe output patterns, and covariate drift sensitivity. The system emits normalized risk metrics, concrete findings, mitigation recommendations, and Markdown/HTML/PDF reports. A reproducible demo over tabular classifiers shows how automated reports can compare model-level risk, estimate time saved over manual audits, and relate aggregate risk to attack-success proxies.
+\end{abstract}
+
+\section{Introduction}
+Before deploying a model, practitioners must answer whether the system is robust, privacy-preserving, calibrated, and safe under plausible misuse. Existing frameworks such as MITRE ATLAS, NIST AI RMF, and OWASP's LLM guidance provide useful threat taxonomies and governance expectations, but development teams still need executable checks that turn those expectations into release evidence~\cite{mitre_atlas,nist_airmf,owasp_llm_top10}. ModelCardSec addresses this gap by generating a security-focused model card from model and dataset artifacts.
+
+\section{System Overview}
+Figure~\ref{fig:main} shows the ModelCardSec pipeline. A user supplies a trained model and evaluation data. Scanner modules compute risk metrics. The risk aggregator combines applicable metrics into a 0--100 score. The report generator emits a security model card with findings and mitigations.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.98\linewidth]{figures/main_pipeline.png}
+    \caption{ModelCardSec pipeline. The repository also generates result-panel figures for model comparisons.}
+    \label{fig:main}
+\end{figure}
+
+\section{Scanners}
+\textbf{Robustness.} ModelCardSec perturbs numerical features and measures accuracy drop and prediction-flip rate. This lightweight check acts as a fast proxy for adversarial robustness~\cite{biggio2018wild}.
+
+\textbf{Membership inference.} The scanner measures whether training examples can be distinguished from held-out examples using model confidence, following the intuition behind membership inference attacks~\cite{shokri2017membership}.
+
+\textbf{Calibration.} The scanner computes expected calibration error and, for binary classification, Brier score. Poor calibration is risky when confidence scores drive security actions~\cite{guo2017calibration}.
+
+\textbf{PII and unsafe output checks.} Regex-based detectors search sampled text and generated outputs for PII-like strings, credential exposure, and unsafe operational instructions. These are intentionally simple, inspectable release gates rather than complete policy models.
+
+\textbf{Drift.} The drift scanner computes population stability index between reference training data and candidate deployment data.
+
+\section{Experimental Setup}
+The demo uses public scikit-learn datasets and small models: logistic regression, random forest, and decision tree classifiers. For each model, the tool writes metrics, JSON artifacts, a Markdown/HTML/PDF report, and three figures: risk scores across models, estimated time saved relative to a manual checklist, and correlation between aggregate risk and attack-success proxy.
+
+\section{Results}
+The generated repository includes a runnable demo:
+\begin{verbatim}
+modelcardsec demo --out reports/demo
+\end{verbatim}
+Panel A compares aggregate risk across models. Panel B compares automated runtime to a manual checklist estimate. Panel C plots risk score against an attack-success proxy based on robustness flip rate and membership advantage. These panels are intended to be replaced by the user's final experimental runs.
+
+\section{Limitations}
+ModelCardSec is a prototype. The default attacks are lightweight and should not be interpreted as certification. Production deployments should use stronger domain-specific attacks, policy-specific unsafe-output classifiers, and organization-specific thresholds.
+
+\section{Code Availability}
+The full implementation is available as a reproducible Python repository. It includes scanner modules, report generation, CLI commands, example configs, tests, and a paper skeleton.
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+\end{document}

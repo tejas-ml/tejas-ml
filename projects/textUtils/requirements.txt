@@ -1,0 +1,8 @@
+asgiref==3.8.1
+Django==4.2.19
+tzdata==2025.1
+sqlparse==0.5.3
+gunicorn==21.2.0
+whitenoise==6.6.0
+requests==2.31.0  # Keep if your app makes HTTP requests
+Pillow==11.0.0    # Keep if handling images

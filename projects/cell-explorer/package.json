@@ -1,0 +1,10 @@
+{
+  "name": "cell-explorer",
+  "version": "1.0.0",
+  "description": "Interactive animal vs plant cell explorer — click organelles to learn",
+  "private": true,
+  "scripts": {
+    "start": "npx --yes serve . -l 3000",
+    "dev": "npx --yes serve . -l 3000"
+  }
+}

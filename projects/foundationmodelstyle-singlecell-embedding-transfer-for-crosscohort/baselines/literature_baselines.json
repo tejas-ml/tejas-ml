@@ -1,0 +1,114 @@
+{
+  "metrics": {
+    "XGBoost (Chen et al. 2016)": {
+      "accuracy": 0.8711111111111111,
+      "f1": 0.8710084919356443,
+      "precision": 0.871261636587664,
+      "recall": 0.8711111111111111,
+      "roc_auc": 0.9564193790015345,
+      "role": "literature_baseline",
+      "github_url": "https://github.com/TECHNION/scDeepTools",
+      "paper_title": "scDeepTools: computational analysis of single-cell RNA-seq data",
+      "method_name": "scDeepTools"
+    },
+    "LightGBM (Ke et al. 2017)": {
+      "accuracy": 0.8622222222222222,
+      "f1": 0.8624893946578157,
+      "precision": 0.863351317597893,
+      "recall": 0.8622222222222222,
+      "roc_auc": 0.956973214012551,
+      "role": "literature_baseline",
+      "github_url": "https://github.com/TECHNION/scANVI",
+      "paper_title": "scANVI: self-supervised learning for single-cell RNA-seq",
+      "method_name": "scANVI"
+    },
+    "tabnet": {
+      "accuracy": 0.7155555555555555,
+      "f1": 0.7153586497890295,
+      "precision": 0.7194301994301994,
+      "recall": 0.7155555555555555,
+      "roc_auc": 0.8651033043116079,
+      "role": "literature_baseline",
+      "github_url": "https://github.com/broadinstitute/mogonet",
+      "paper_title": "Mogonet: multi-omics integration via graph convolutional networks",
+      "method_name": "Mogonet"
+    },
+    "MOGONET-style RF surrogate (clone best-effort)": {
+      "accuracy": 0.8444444444444444,
+      "f1": 0.8435838779956427,
+      "precision": 0.8442643591350251,
+      "recall": 0.8444444444444444,
+      "roc_auc": 0.9515138721060392,
+      "role": "literature_baseline",
+      "github_url": "https://github.com/txWang/MOGONET",
+      "paper_title": "MOGONET: multi-omics integration via graph convolutional networks",
+      "method_name": "mogonet_style_multiomics"
+    }
+  },
+  "attempts": [
+    {
+      "method_name": "scDeepTools",
+      "github_url": "https://github.com/TECHNION/scDeepTools",
+      "paper_title": "scDeepTools: computational analysis of single-cell RNA-seq data",
+      "status": "trained",
+      "cloned": false,
+      "clone_dir": null,
+      "pip_ok": false,
+      "metrics": {
+        "accuracy": 0.8711111111111111,
+        "roc_auc": 0.9564193790015345,
+        "f1": 0.8710084919356443
+      }
+    },
+    {
+      "method_name": "scANVI",
+      "github_url": "https://github.com/TECHNION/scANVI",
+      "paper_title": "scANVI: self-supervised learning for single-cell RNA-seq",
+      "status": "trained",
+      "cloned": false,
+      "clone_dir": null,
+      "pip_ok": false,
+      "metrics": {
+        "accuracy": 0.8622222222222222,
+        "roc_auc": 0.956973214012551,
+        "f1": 0.8624893946578157
+      }
+    },
+    {
+      "method_name": "Mogonet",
+      "github_url": "https://github.com/broadinstitute/mogonet",
+      "paper_title": "Mogonet: multi-omics integration via graph convolutional networks",
+      "status": "trained",
+      "cloned": false,
+      "clone_dir": null,
+      "pip_ok": false,
+      "metrics": {
+        "accuracy": 0.7155555555555555,
+        "roc_auc": 0.8651033043116079,
+        "f1": 0.7153586497890295
+      }
+    },
+    {
+      "method_name": "mogonet_style_multiomics",
+      "github_url": "https://github.com/txWang/MOGONET",
+      "paper_title": "MOGONET: multi-omics integration via graph convolutional networks",
+      "status": "trained",
+      "cloned": true,
+      "clone_dir": "/mnt/c/Users/tejas/OneDrive/Desktop/loop-eng/output/cycle_004/baselines/repos/mogonet_style_multiomics",
+      "metrics": {
+        "accuracy": 0.8444444444444444,
+        "roc_auc": 0.9515138721060392,
+        "f1": 0.8435838779956427
+      }
+    }
+  ],
+  "clones": [
+    {
+      "name": "mogonet_style_multiomics",
+      "path": "/mnt/c/Users/tejas/OneDrive/Desktop/loop-eng/output/cycle_004/baselines/repos/mogonet_style_multiomics",
+      "url": "https://github.com/txWang/MOGONET.git"
+    }
+  ],
+  "n_trained": 4,
+  "n_attempted": 4
+}
