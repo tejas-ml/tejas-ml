@@ -1,4 +1,4 @@
-# Tejas Sandip Mahajan
+# Tejas Mahajan
 
 **PhD Student in Computer Science @ University of Central Florida (Computational Biology Lab)**  
 **Quantitative Researcher · AI/ML Scientist · High-Performance Software Engineer**  
