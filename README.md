@@ -8,7 +8,6 @@ Orlando, FL
 [![Resume PDF](https://img.shields.io/badge/Resume-PDF-B31B1B?style=flat-square&logo=adobe-acrobat-reader&logoColor=white)](https://tejas-ml.github.io/Tejas_Mahajan_Resume.pdf)
 [![Google Scholar](https://img.shields.io/badge/Google_Scholar-Publications-4285F4?style=flat-square&logo=google-scholar&logoColor=white)](https://scholar.google.com/citations?user=sLSmk9AAAAAJ&hl=en)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-tejas--ml-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/tejas-ml)
-[![X](https://img.shields.io/badge/X-@tejas--ml-000000?style=flat-square&logo=x&logoColor=white)](https://x.com/tejas-ml)
 [![LeetCode](https://img.shields.io/badge/LeetCode-tejas--ml-FFA116?style=flat-square&logo=leetcode&logoColor=black)](https://leetcode.com/u/tejas-ml/)
 [![CodeChef](https://img.shields.io/badge/CodeChef-tejas__ml-5B4638?style=flat-square&logo=codechef&logoColor=white)](https://www.codechef.com/users/tejas_ml)
 [![Email](https://img.shields.io/badge/Email-network.with.tejas%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:network.with.tejas@gmail.com)
@@ -51,4 +50,4 @@ My work spans **single-cell multi-omics & computational biology**, **quantitativ
 - **Portfolio & Publications:** [https://tejas-ml.github.io/](https://tejas-ml.github.io/) · **Resume (PDF):** [Tejas_Mahajan_Resume.pdf](https://tejas-ml.github.io/Tejas_Mahajan_Resume.pdf)
 - **Email:** [network.with.tejas@gmail.com](mailto:network.with.tejas@gmail.com)
 - **LinkedIn:** [linkedin.com/in/tejas-ml](https://www.linkedin.com/in/tejas-ml)
-- **Google Scholar:** [Tejas Mahajan](https://scholar.google.com/citations?user=sLSmk9AAAAAJ&hl=en) · **ResearchGate:** [Tejas Mahajan](https://www.researchgate.net/profile/tejas-Mahajan-5)
+- **Google Scholar:** [Tejas Mahajan](https://scholar.google.com/citations?user=sLSmk9AAAAAJ&hl=en) · **ResearchGate:** [Tejas Mahajan](https://www.researchgate.net/profile/Tejas-Mahajan-5)
